@@ -22,16 +22,14 @@ app.use(session({
 app.use(express.static('public'));
 app.use(express.json());
 
-// Clear session on every page load
-app.use((req, res, next) => {
-  if (req.path === '/' || req.path === '/index.html') {
-    req.session.destroy(err => {
-      if (err) {
-        console.error('Error clearing session:', err);
-      }
-    });
-  }
-  next();
+// Clear session only on page reload (initial load)
+app.get('/', (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      console.error('Error clearing session:', err);
+    }
+    res.sendFile(__dirname + '/public/index.html');
+  });
 });
 
 app.post('/ask', async (req, res) => {
@@ -40,7 +38,6 @@ app.post('/ask', async (req, res) => {
   }
 
   const userMessage = req.body.message;
-
   req.session.conversationContext += `\nUser: ${userMessage.replace(/\*/g, '')}`;
 
   try {
