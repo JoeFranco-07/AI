@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  color: white;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  max-width: 800px;
+  height: 95vh;
+  background: #111;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.chat-box {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #222;
+}
+
+.message {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background-color: #333;
+  border: 1px solid #444;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.user {
+  text-align: left;
+  color: #fff;
+  font-size: 16px;
+  background-color: #444;
+}
+
+.ai {
+  text-align: left;
+  color: #f0f0f0;
+  font-size: 16px;
+  background-color: #222;
+}
+
+.ai .code {
+  background-color: #1e1e1e;
+  color: #a6e22e;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #111;
+  border-top: 1px solid #444;
+}
+
+textarea {
+  width: 85%;
+  padding: 12px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: white;
+  resize: none;
+  overflow-y: hidden;
+  max-height: 120px;
+}
+
+button {
+  padding: 12px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #166bbd;
+}
+
+button:active {
+  background-color: #13598b;
+}
+
+.start-button {
+  padding: 12px;
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.start-button:hover {
+  background-color: #e64a19;
+}
+
+.start-button:active {
+  background-color: #d32f2f;
+}

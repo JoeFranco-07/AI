@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat with AI</title>
+  <link rel="icon" type="image/x-icon" href="/ai.ico"> 
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-box" id="chatBox"></div>
+    <div class="input-container">
+      <textarea id="userInput" placeholder="Type your message..." oninput="resizeInput()"></textarea>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+    <button id="startButton" class="start-button" onclick="resetConversation()" style="display: none;">Start New Conversation</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
