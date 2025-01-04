@@ -11,7 +11,6 @@ async function sendMessage() {
   userDiv.textContent = userMessage;
   chatBox.appendChild(userDiv);
 
-
   const response = await fetch('/ask', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -49,8 +48,13 @@ function resetConversation() {
   const startButton = document.getElementById("startButton");
 
   chatBox.innerHTML = '';
-  
   startButton.style.display = 'none';
-        
-  fetch('/reset', { method: 'POST' }); 
+  
+  fetch('/reset', { method: 'POST' });
 }
+
+async function clearSessionOnLoad() {
+  await fetch('/reset', { method: 'POST' });
+}
+
+window.onload = clearSessionOnLoad;
