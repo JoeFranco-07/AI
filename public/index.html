@@ -13,9 +13,17 @@
     <div class="input-container">
       <textarea id="userInput" placeholder="Type your message..." oninput="resizeInput()"></textarea>
       <button onclick="sendMessage()">Send</button>
+      <button id="clearChatButton" onclick="clearChatModal()">Clear</button>
     </div>
-    <button id="startButton" class="start-button" onclick="resetConversation()" style="display: none;">Start New Conversation</button>
-  </div>
+    <div id="clearChatModal" class="modal">
+      <div class="modal-content">
+        <p>Are you sure you want to clear the chat?</p>
+        <button id="confirmClear" onclick="confirmClearChat()">Yes</button>
+        <button id="cancelClear" onclick="closeModal()">No</button>
+      </div>
+    </div>
+        
+  
 
   <script src="script.js"></script>
 </body>

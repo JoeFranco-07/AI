@@ -56,5 +56,28 @@ function resetConversation() {
 async function clearSessionOnLoad() {
   await fetch('/reset', { method: 'POST' });
 }
+function clearChatModal() {
+  const modal = document.getElementById("clearChatModal");
+  modal.style.display = "flex"; // Show the modal
+}
+
+function closeModal() {
+  const modal = document.getElementById("clearChatModal");
+  modal.style.display = "none"; // Hide the modal
+}
+
+async function confirmClearChat() {
+  const chatBox = document.getElementById("chatBox");
+  const modal = document.getElementById("clearChatModal");
+
+  chatBox.innerHTML = '';
+
+  await fetch('/reset', { method: 'POST' });
+
+  modal.style.display = "none";
+
+  const startButton = document.getElementById("startButton");
+  startButton.style.display = 'block';
+}
 
 window.onload = clearSessionOnLoad;
